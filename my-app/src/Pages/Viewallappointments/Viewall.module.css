@@ -1,0 +1,239 @@
+html,
+body {
+  padding: 10px;
+  overflow: auto;
+}
+
+.maindiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sidediv {
+  flex: 2;
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  border: 0.5px solid #d6d6d6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.card {
+  flex: 1;
+  background-color: #1a78f2;
+  border-radius: 5px;
+}
+
+.viewallappointments {
+  width: 150px;
+  border-bottom: 0.5px solid #d6d6d6;
+  color: #202020;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: -20px;
+  padding-right: 10px;
+  margin-left: 650px;
+}
+
+.upcomingappointmentstoday {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: #6d6d6d;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.upcomingappointmentstoday span {
+  color: #202020;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 0.5px solid #d6d6d6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.imagebasit img {
+  width: 20px;
+  height: 20px;
+  margin-left: 75px;
+}
+
+.basitname {
+  color: #6d6d6d;
+  font-weight: 400;
+  font-size: 15px;
+  margin-right: 300px;
+}
+
+.time {
+  color: #6d6d6d;
+  font-weight: 400;
+  font-size: 15px;
+  position: relative;
+  right: 100px;
+}
+
+.upcomingbutton {
+  background-color: #6896d1;
+  border-radius: 5px;
+  border: none;
+  padding: 3px 5px;
+  color: #ffffff;
+  font-weight: 200;
+  font-size: 12px;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    margin-right: 10px;
+  }
+
+  .viewallappointments {
+    margin-left: 200px;
+    padding-right: 10px;
+  }
+
+  .imagebasit img {
+    margin-left: 50px;
+  }
+
+  .basitname {
+    margin-right: 150px;
+  }
+
+  .time {
+    right: 50px;
+  }
+
+  .upcomingbutton {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .maindiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .sidediv {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .viewallappointments {
+    margin-left: 50px;
+    margin-bottom: 30px;
+  }
+
+  .imagebasit img {
+    margin-left: 30px;
+  }
+
+  .basitname {
+    margin-right: 100px;
+  }
+
+  .time {
+    right: 20px;
+  }
+
+  .upcomingbutton {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .viewallappointments {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
+  .imagebasit img {
+    margin-left: 10px;
+  }
+
+  .basitname {
+    margin-right: 50px;
+  }
+
+  .time {
+    right: 10px;
+  }
+
+  .upcomingbutton {
+    margin-left: 10px;
+  }
+}
+
+.loading {
+  margin-left: 300px;
+}
+
+@media (max-width: 767px) {
+  .loading {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1125px) and (max-width: 2300px) {
+  .viewallappointments {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+@media (max-width: 766px) {
+  .maindiv {
+    flex-direction: column;
+    align-items: center;
+  }
+  .viewallappointments {
+    margin-left: auto;
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 434px) {
+  .viewallappointments {
+    font-size: 14px;
+    margin-right: 20px;
+    border: none;
+  }
+
+  .upcomingappointmentstoday {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .viewallappointments {
+    margin-left: auto;
+    margin-right: 20px;
+    padding-right: 10px;
+    padding-left: 60px;
+  }
+  .loading {
+    margin-right: 100px;
+  }
+}

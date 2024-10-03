@@ -1,0 +1,337 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.upperdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 4px 0px #1a78f240;
+  margin-top: -15px;
+  margin-left: -10px;
+  margin-right: -10px;
+  height: 80px;
+}
+.button button {
+  border: none;
+  border: 1px solid #000000;
+  background-color: #ffffff;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  width: 80px;
+  height: 25px;
+  margin-left: 40px;
+}
+.msg {
+  width: 30px;
+  height: 30px;
+  /* margin-left: 550px; */
+  background-color: #f9f9f9;
+  border-radius: 15px;
+}
+.msg img {
+  width: 16px;
+  height: 15px;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  color: #000000;
+}
+.msg3 {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: red;
+  margin-left: 30px;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bell {
+  width: 30px;
+  height: 30px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+}
+.msgbell {
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+}
+.bell img {
+  width: 14px;
+  height: 14px;
+  margin-left: 8px;
+  margin-bottom: 5px;
+}
+.profileimg {
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+  margin-right: 80px;
+}
+.profileimg img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+.line {
+  width: 2px;
+  height: 40px;
+  height: 40px;
+  background: linear-gradient(to bottom, #1a78f2, #6896d1);
+}
+.navdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.buttondashboard button {
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 16px;
+  font-weight: 300;
+  color: #202020;
+}
+.buttonappointment button {
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 16px;
+  font-weight: 300;
+  color: #202020;
+}
+.button {
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 16px;
+  font-weight: 300;
+  color: #202020;
+}
+.buttonsetting button {
+  background-color: transparent;
+  height: 60px;
+  width: 110px;
+  border: none;
+  font-family: roboto;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #202020;
+  text-decoration: none;
+}
+.searchContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.search {
+  height: 30px;
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  border: 2px solid #d6d6d6;
+  outline: none;
+  padding-left: 35px;
+  box-sizing: border-box;
+}
+
+.searchicon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9e9e9e;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .search {
+    width: 100%;
+  }
+}
+.activeButton {
+  background-color: #6896d1;
+  height: 60px;
+  width: 110px;
+  border: none;
+  font-family: roboto;
+  /* border-radius: 10px; */
+  padding: 4px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(94, 94, 234);
+  z-index: 1000;
+  justify-content: space-around;
+  height: 30px;
+}
+
+.footerButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footerButtons div {
+  flex: 1;
+  text-align: center;
+}
+
+.footerButtons a {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  color: #202020;
+  text-decoration: none;
+}
+
+.footerButtons a.activeButton {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .navdown {
+    display: none;
+  }
+  @media (max-width: 414px) {
+    .upperdiv {
+      flex-direction: row;
+      align-items: center;
+      height: auto;
+      padding: 10px;
+    }
+
+    .msg,
+    .bell,
+    .profileimg {
+      margin: 10px;
+    }
+
+    .msg img,
+    .bell img {
+      margin-left: 0;
+    }
+
+    .button button {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .profileimg img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 395px) {
+    .upperdiv {
+      padding: 8px;
+    }
+
+    .msg,
+    .bell,
+    .profileimg {
+      margin: 8px;
+    }
+
+    .profileimg img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .upperdiv {
+      padding: 5px;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .msg,
+    .bell,
+    .profileimg {
+      margin: 5px;
+    }
+
+    .profileimg img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .button button {
+      width: 70px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .msg img,
+    .bell img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .footer {
+    display: flex;
+  }
+
+  .footerButtons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+  }
+
+  .footerButtons div {
+    flex: 1;
+    text-align: center;
+  }
+}
