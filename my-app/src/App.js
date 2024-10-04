@@ -1,12 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
+
 function App() {
+  const location = useLocation();
+  const hideNavbarPaths = ["/searchcards"];
+
   return (
     <>
-      <Navbar />
+      {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <Outlet />
     </>
   );
 }
 
 export default App;
+

@@ -7,6 +7,7 @@ import Viewall from "../Pages/Viewallappointments/Viewall";
 import Appointments from "../Pages/Appointments/Appointments";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Settings from "../Pages/Settings/Settings";
+import Searchcards from "../Pages/Searchcards/Searchcards";
 
 
 const router = createBrowserRouter([{
@@ -17,7 +18,8 @@ const router = createBrowserRouter([{
         { path: 'dashboard', element: <Dashboard /> },
         { path: 'appointments', element: <Appointments /> },
         { path: 'settings', element: <Settings /> },
-        { path: 'viewallappointments', element: <Viewall /> }
+        { path: 'viewallappointments', element: <Viewall /> },
+        { path: 'searchcards', element: <Searchcards /> }
     ]
 }])
 

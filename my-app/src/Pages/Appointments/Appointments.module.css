@@ -216,7 +216,7 @@ body {
   }
 }
 
-@media (max-width: 434px) {
+@media (max-width: 495px) {
   .viewallappointments {
     font-size: 14px;
     margin-right: 20px;
