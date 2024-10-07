@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Modal from 'react-modal';
 import styles from '../Navbar/Navbar.module.css';
 import image from '../../assets/images/Vector (2).png';
 import image1 from '../../assets/images/Vector (3).png';
@@ -7,6 +9,13 @@ import profile from '../../assets/images/profile.png';
 import searchicon from '../../assets/images/8666693_search_icon.png';
 
 const Navbar = () => {
+    const cartCount = useSelector((state) => state.cart.cartCount);
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => setModalIsOpen(true);
+    const closeModal = () => setModalIsOpen(false);
+
     return (
         <>
             <div className={styles.upperdiv}>
@@ -18,14 +27,40 @@ const Navbar = () => {
                     <img src={image} alt='' />
                 </div>
                 <div className={styles.bell}>
-                    <span className={styles.msgbell}>3</span>
-                    <img src={image1} alt='' />
+                    <span className={styles.msgbell}>{cartCount}</span>
+                    <img src={image1} alt='' onClick={openModal} />
                 </div>
                 <div className={styles.line}></div>
                 <div className={styles.profileimg}>
                     <img src={profile} />
                 </div>
             </div>
+
+            {/* Modal to show cart items */}
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Cart Items"
+                ariaHideApp={false}
+                className={styles.modal}
+            >
+                <h2>Cart Items</h2>
+                {cartItems.length > 0 ? (
+                    <ul>
+                        {cartItems.map((item, index) => (
+                            <li key={index}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No items in the cart</p>
+                )}
+                <button onClick={closeModal}>Close</button>
+            </Modal>
+
+
             <div className={styles.container}>
                 <div className={styles.navdown}>
                     <div className={styles.buttondashboard}>
@@ -37,7 +72,6 @@ const Navbar = () => {
                                 Dashboard
                             </NavLink>
                         </button>
-
                     </div>
                     <div className={styles.buttonappointment}>
                         <button className={styles.button}>
@@ -72,7 +106,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Sticky footer for mobile devices */}
+
             <div className={styles.footer}>
                 <div className={styles.footerButtons}>
                     <div className={styles.buttondashboard}>
@@ -103,6 +137,6 @@ const Navbar = () => {
             </div>
         </>
     );
-}
+};
 
 export default Navbar;

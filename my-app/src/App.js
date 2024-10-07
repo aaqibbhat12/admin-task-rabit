@@ -7,7 +7,8 @@ function App() {
 
   return (
     <>
-      {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
+      {/* {!hideNavbarPaths.includes(location.pathname) && <Navbar />} */}
+      <Navbar />
       <Outlet />
     </>
   );

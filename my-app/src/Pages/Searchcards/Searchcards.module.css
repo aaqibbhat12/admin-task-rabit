@@ -34,7 +34,7 @@
 }
 
 .card {
-  height: 320px;
+  height: 340px;
   width: 220px;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -155,4 +155,21 @@
   .cardDescription {
     margin-left: 10px;
   }
+}
+
+.buttondiv button {
+  width: 100px;
+  height: 30px;
+  background: none;
+  color: black;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+button:focus {
+  background-color: #80b4ec9e;
+  color: black;
 }
