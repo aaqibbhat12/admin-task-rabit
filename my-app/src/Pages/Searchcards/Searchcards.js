@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../../Pages/Searchcards/Searchcards.module.css';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Store/Store';
 
 const CardData = [
     {
@@ -41,7 +43,7 @@ const CardData = [
     {
         id: 7,
         title: "Chemistry card",
-        description: "card with the image of chemistry",
+        description: "card with the image of chem",
         image: "https://media.istockphoto.com/id/157378066/photo/formulas.jpg?s=2048x2048&w=is&k=20&c=lXGwn39iVQSYOqM7qkun_eiwT9Ap-QF_nUrU8AtXQVA="
     },
     {
@@ -71,20 +73,30 @@ const CardData = [
     {
         id: 12,
         title: "Environment card",
-        description: "card with the image of  environment",
+        description: "card with the image of  env",
         image: "https://media.istockphoto.com/id/1450272068/photo/wind-sun-and-water-energy.jpg?s=2048x2048&w=is&k=20&c=SWW3cYI5IkccJBhYwGEiWbYZeTZImQiGUNH9osVbVxI="
     },
 
 ];
 
+
 const Searchcards = () => {
     const [searchTerm, setSearchTerm] = useState("");
+    const dispatch = useDispatch();
 
 
     const filteredCards = CardData.filter(card =>
         card.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         card.description.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    const handleAddToCart = (card) => {
+        dispatch(addToCart({
+            id: card.id,
+            title: card.title,
+            description: card.description,
+        }));
+    };
+
 
     return (
         <>
@@ -106,6 +118,9 @@ const Searchcards = () => {
                             <img src={card.image} alt={card.title} className={styles.cardImage} />
                             <h3 className={styles.cardTitle}>{card.title}</h3>
                             <p className={styles.cardDescription}>{card.description}</p>
+                            <div className={styles.buttondiv}>
+                                <button onClick={() => handleAddToCart(card)}>Add to Cart</button>
+                            </div>
                         </div>
                     ))
                 ) : (
@@ -114,6 +129,7 @@ const Searchcards = () => {
                         <p>No cards match your search</p>
                     </div>
                 )}
+
             </div>
         </>
     );
