@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { removeFromCart } from '../../Store/cartslice';
+import { useDispatch } from 'react-redux';
 import Modal from 'react-modal';
 import styles from '../Navbar/Navbar.module.css';
 import image from '../../assets/images/Vector (2).png';
@@ -9,12 +11,17 @@ import profile from '../../assets/images/profile.png';
 import searchicon from '../../assets/images/8666693_search_icon.png';
 
 const Navbar = () => {
-    const cartCount = useSelector((state) => state.cart.cartCount);
-    const cartItems = useSelector((state) => state.cart.cartItems);
+    const dispatch = useDispatch()
+    const cartCount = useSelector((state) => state.CART.cartCount);
+    const cartItems = useSelector((state) => state.CART.cartItems);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const openModal = () => setModalIsOpen(true);
     const closeModal = () => setModalIsOpen(false);
+
+    const handleRemoveFromCart = (itemId) => {
+        dispatch(removeFromCart(itemId));
+    };
 
     return (
         <>
@@ -49,8 +56,11 @@ const Navbar = () => {
                     <ul>
                         {cartItems.map((item, index) => (
                             <li key={index}>
+
                                 <h3>{item.title}</h3>
                                 <p>{item.description}</p>
+                                <span className={styles.itemcount}>{item.count}</span>
+                                <button className={styles.remove} onClick={() => handleRemoveFromCart(item.id)}>remove</button>
                             </li>
                         ))}
                     </ul>

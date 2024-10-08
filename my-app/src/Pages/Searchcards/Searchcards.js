@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../../Pages/Searchcards/Searchcards.module.css';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../Store/Store';
+import { addToCart } from '../../Store/cartslice';
 
 const CardData = [
     {

@@ -337,6 +337,7 @@ html {
 }
 
 .modal {
+  position: relative;
   background-color: white;
   padding: 20px;
   width: 400px;
@@ -347,4 +348,33 @@ html {
   max-height: 400px;
   overflow-y: auto;
   scrollbar-width: none;
+}
+.remove {
+  background-color: red;
+  color: white;
+  margin-left: 50px;
+  border: none;
+  outline: none;
+}
+
+.remove:focus,
+.remove:active {
+  background-color: red;
+  color: white;
+  border: none;
+  outline: none;
+}
+.itemcount {
+  position: relative;
+  left: 210px;
+  top: -75px;
+  height: 10px;
+  width: 10px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
